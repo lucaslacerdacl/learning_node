@@ -2,19 +2,22 @@
 	<html lang="pt-br">
 		<head>
 			<meta charset="utf-8"/>
-			<title>Notíias</title>
+			<title>Notícias</title>
 		</head>
 	<body>
 
-		<h1>Notíias</h1>
+		<h1>Notícias</h1>
 		<table>
 			<tr>
 				<td>Titulo</td>
 				<td>Noticia</td>
 			</tr>
+			<% for(var i=0; i<notice.length; i++){ %>
 			<tr>
-				
+				<td><%= notice[i].title %></td>
+				<td><%= notice[i].notice %></td>
 			</tr>
+			<% } %>
 		</table>
 	</body>
 </html>
