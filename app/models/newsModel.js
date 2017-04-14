@@ -3,6 +3,10 @@ var newsModel = function(){
 		connection.query('select * from news', callback);
 	}
 
+	this.addNotice = function(notice, connection, callback){
+		connection.query('insert into news set ?', notice, callback);
+	}
+
 	return this;
 }
 
