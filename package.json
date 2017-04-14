@@ -1,0 +1,18 @@
+{
+  "name": "node_course",
+  "version": "1.0.0",
+  "description": "This is a project using Javascript for better learning Node.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Lucas Lacerda",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "consign": "^0.1.4",
+    "ejs": "^2.5.6",
+    "express": "^4.15.2",
+    "mysql": "^2.13.0"
+  }
+}
