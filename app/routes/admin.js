@@ -1,6 +1,6 @@
 var adminRoutes = function(app){
 	app.get('/admin', function(request, response){
-		response.render('admin/form_add_notice');
+		response.render('admin/form_add_notice', {validation:{}, notice: {}});
 	});
 
 	app.post('/admin/save', function(request, response){
@@ -17,7 +17,7 @@ var adminRoutes = function(app){
 		var errors = request.validationErrors();
 
 		if(errors){
-			response.render('admin/form_add_notice');
+			response.render('admin/form_add_notice', {validation: errors, notice: request.body});
 			return;
 		}
 
