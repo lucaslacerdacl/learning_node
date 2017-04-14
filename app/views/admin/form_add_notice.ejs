@@ -5,14 +5,24 @@
 			<title>Formuláio de cadastro de Not?ia</title>
 		</head>
 	<body>
-
 		<h1>Adicionar notícia</h1>
-
 		<form action="/admin/save" method="post">
+			<label>title</label>
 			<input type="text" name="title">
+			<br>
+			<label>notice</label>
 			<input type="text" name="notice">
+			<br>
+			<label>resume</label>
+			<input type="text" name="resume">
+			<br>
+			<label>author_name</label>
+			<input type="text" name="author_name">
+			<br>
+			<label>notice_date</label>
+			<input type="date" name="notice_date">
+			<br>
 			<input type="submit" value="Enviar">
 		</form>
-
 	</body>
 </html>
