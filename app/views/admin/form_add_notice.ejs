@@ -35,7 +35,7 @@
 
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="index.html">HOME</a></li>
+						<li><a href="/">HOME</a></li>
 					</ul>
 				</div>
 			</div>
@@ -43,44 +43,48 @@
 
 
 	    <div class="container">
-		
+			<% if (validation.length > 0) {%>
 			<div class="row">
 				<div class="col-md-12">
 					<div class="alert alert-danger">
 						<strong>Atenção!</strong>
 						<ul>
-							<li>Título é obrigatório</li>
-							<li>Resumo é obrigatório</li>
+							<% for(var i = 0; i<validation.length; i++){ %>
+							<li>
+								<%= validation[i].msg %>
+							</li>
+							<% } %>
 						</ul>
 					</div>
 				</div>
 			</div>
+			<% } %>
 	    	<div class="row">
 	    		<div class="col-md-12">
-	    			<form>
+	    			<form action="/admin/save" method="post">
 						<div class="form-group">
 							<label for="titulo">Título:</label>
-							<input type="text" class="form-control" id="titulo" name="titulo">
+							<input type="text" class="form-control" id="titulo" name="title" value="<%= notice.title %>">
 						</div>
 
 						<div class="form-group">
 							<label for="pwd">Resumo:</label>
-							<input type="text" class="form-control" id="resumo" name="resumo">
+							<input type="text" class="form-control" id="resumo" name="resume" value="<%= notice.resume %>">
 						</div>
 						
 						<div class="form-group">
 							<label for="pwd">Autor:</label>
-							<input type="text" class="form-control" id="autor" name="autor">
+							<input type="text" class="form-control" id="autor" name="author_name" value="<%= notice.author_name %>">
 						</div>
 
 						<div class="form-group">
 							<label for="pwd">Data:</label>
-							<input type="date" class="form-control" id="data_noticia" name="data_noticia">
+							<input type="date" class="form-control" id="data_noticia" name="notice_date" value="<%= notice.notice_date %>">
 						</div>
 
 						<div class="form-group">
 							<label for="pwd">Notícia:</label>
-							<textarea class="form-control" id="noticia" name="noticia"></textarea>
+							<textarea class="form-control" id="noticia" name="notice"><%= notice.notice %></textarea>
 						</div>
 
 
