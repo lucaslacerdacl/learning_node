@@ -1,6 +1,11 @@
 var homeRoutes = function(app){
+
+	function getController(){
+		return app.app.controllers.homeController(app);
+	}
+
 	app.get('/', function(request, response){
-		response.render('home/index');
+		getController().home(request, response);
 	});
 }
 
